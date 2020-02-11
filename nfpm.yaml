@@ -2,7 +2,7 @@
 name: "alertmanager"
 arch: "amd64"
 platform: "linux"
-version: "v0.20.0"
+version: "vx.y.z"
 section: "default"
 priority: "extra"
 maintainer: "Francis Begyn <francis@begyn.be>"
