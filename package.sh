@@ -2,12 +2,8 @@
 
 ./fetch.sh $1 $2
 
-sed -i "s/vx.y.z/v$1/g" ./nfpm.yaml
+sed "s/vx.y.z/v$1/g" ./nfpm.yaml > ./nfpm-test.yaml
 
-nfpm pkg --target alertmanager-$1.$2.deb
+nfpm pkg --target alertmanager_$1_$2.deb
 
-rm -rf ./bin
-rm -rf ./alertmanager-$1.$2
-rm -rf ./alertmanager-$1.$2.tar.gz
-
-git checkout -- nfpm.yaml
+rm -rf ./bin ./alertmanager-$1.linux-$2 ./alertmanager-$1.linux-$2.tar.gz ./nfpm-test.yaml
